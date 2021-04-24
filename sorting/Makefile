@@ -1,7 +1,7 @@
 CC=g++
 
-QuickSort: Heapify.o QuickSort.o
-	$CC -o QuickSort Heapify.o QuickSort.o
+HeapSort: Swap.o Heapify.o BuildHeap.o HeapSort.o
+	$(CC) -o HeapSort Swap.o BuildHeap.o Heapify.o HeapSort.o
 	
-Heapify.o: Heapify.cpp
-	$CC -o Heapify.o -c Heapify.cpp
+clean:
+	rm -rf *.o QuickSort
